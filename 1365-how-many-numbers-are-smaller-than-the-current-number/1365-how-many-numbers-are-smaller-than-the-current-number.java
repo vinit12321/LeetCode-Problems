@@ -1,16 +1,18 @@
 class Solution {
     public int[] smallerNumbersThanCurrent(int[] nums) {
         
-        int[] result=new int[nums.length];
+       int[] result=Arrays.copyOf(nums,nums.length);
+        Arrays.sort(result);
         for(int i=0;i<nums.length;i++){
-            int small=0;
-            for(int j=0;j<nums.length;j++){
-                if(nums[i]>nums[j]){
-                    small++;
+
+            for(int j=0;j<result.length;j++){
+                if(nums[i]==result[j]){
+                    nums[i]=j;
+                    break;
                 }
             }
-            result[i]=small;
+
         }
-        return result;
+        return nums;
     }
 }
