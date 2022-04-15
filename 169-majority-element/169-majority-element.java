@@ -2,25 +2,8 @@ class Solution {
    public int majorityElement(int[] nums) {
         int cand=findCandidate(nums,nums.length);
         /* Print the candidate if it is Majority*/
-        if (isMajority(nums, nums.length, cand)){
-            return cand;
-        }
-        else
-            return 0;
+       return cand;
 
-
-    }
-    public  boolean isMajority(int a[],int size,int cand){
-        int count=0;
-        for(int i=0;i<size;i++){
-            if(cand==a[i]){
-                count++;
-            }
-        }
-        if(count>size/2)
-            return true;
-        else
-            return  false;
 
     }
     public  int findCandidate(int[] nums, int length) {
