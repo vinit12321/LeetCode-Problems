@@ -1,14 +1,14 @@
 class Solution {
     public void rotate(int[] nums, int k) {
-        int n=nums.length;
+        
         if (k == 0)
             return;
  
       
-        k = k % n;
-        reverseArray(nums, 0, n - 1);
+        k = k % nums.length;;
+        reverseArray(nums, 0, nums.length - 1);
         reverseArray(nums, 0, k - 1);
-        reverseArray(nums, k, n - 1);
+        reverseArray(nums, k, nums.length - 1);
     }
 
     public void reverseArray(int arr[], int start,
