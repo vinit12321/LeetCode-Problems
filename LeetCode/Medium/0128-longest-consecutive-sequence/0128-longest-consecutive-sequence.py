@@ -8,7 +8,7 @@ class Solution:
         if len(nums)==0:
             return 0
         
-        for n in nums:
+        for n in numset:
 
             if n-1 not in numset:
 
