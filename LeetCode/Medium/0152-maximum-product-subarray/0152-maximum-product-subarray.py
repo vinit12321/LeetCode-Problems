@@ -1,25 +1,18 @@
 class Solution:
     def maxProduct(self, nums: List[int]) -> int:
-        res = nums[0]
-        maxProd = nums[0]
-        minProd = nums[0]
-
-        # Traverse from second element
-        for i in range(1, len(nums)):
-            curr = nums[i]
-
-            # Swap max and min if current is negative
+        min_prod=nums[0]
+        max_prod=nums[0]
+        res=nums[0]
+        for i in range(1,len(nums)):
+            curr=nums[i]
             if curr < 0:
-                maxProd, minProd = minProd, maxProd
-
-            # Update max and min product
-            maxProd = max(curr, maxProd * curr)
-            minProd = min(curr, minProd * curr)
-
-            # Update result
-            res = max(res, maxProd)
-
+                min_prod,max_prod=max_prod,min_prod
+            
+            min_prod=min(curr,min_prod*curr)
+            max_prod=max(curr,max_prod*curr)
+            res=max(res,max_prod)
         return res
+            
 
 
         
