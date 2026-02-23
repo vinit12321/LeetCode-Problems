@@ -3,13 +3,16 @@ class Solution:
         low=0
         high=len(numbers)-1
 
-        while low<=high:
-            sum1=numbers[low]+numbers[high]
-            if sum1==target:
-                return low+1,high+1
-            elif sum1<target:
+        while low<high:
+            total=numbers[low]+numbers[high]
+
+            if total==target:
+
+                return [low+1,high+1]
+            
+            elif total<target:
                 low+=1
-            else :
+            else:
                 high-=1
-        
+            
 
