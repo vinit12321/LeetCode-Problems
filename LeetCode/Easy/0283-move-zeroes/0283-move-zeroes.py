@@ -6,8 +6,7 @@ class Solution:
         val=0
         k=0
         for i in range(len(nums)):
-            if nums[i] != val:
+            if nums[i]!=val:
                 nums[k],nums[i]=nums[i],nums[k]
-
                 k+=1
         
