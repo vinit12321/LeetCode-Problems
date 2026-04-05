@@ -5,9 +5,10 @@ class Solution:
 
         for i in range(len(nums)):
             diff=target-nums[i]
-            if diff in data:
+            if diff not in data:
+                data[nums[i]]=i
+            else:
+                #print(data)
                 return [data[diff],i]
-            data[nums[i]]=i
-        
+        return [-1,-1]
             
-        return [-1,-1]        
